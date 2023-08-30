@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 console.log("yes");
 
 app.post(
-  "/merge",
+  "/merge.html",
   upload.fields([
     { name: "pdf1", maxCount: 1 },
     { name: "pdf2", maxCount: 1 },
