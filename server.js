@@ -9,18 +9,16 @@ const { Console } = require("console");
 app.use("/static", express.static("public"));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "templates/index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
-console.log("yes");
 
 app.post(
-  "/merge.html",
+  "/merge",
   upload.fields([
     { name: "pdf1", maxCount: 1 },
     { name: "pdf2", maxCount: 1 },
   ]),
   async (req, res, next) => {
-    console.log("eys");
     const uploadedFiles = req.files["pdf1"];
     const uploadedFiles2 = req.files["pdf2"];
 
